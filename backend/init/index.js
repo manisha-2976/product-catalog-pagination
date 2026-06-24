@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const initData = require('./data.js');
+// const initData = require('./data.js');
 const mongoose = require('mongoose');
 const Product = require('../models/products.js');
 

@@ -5,9 +5,11 @@
   "license": "ISC",
   "author": "Manisha Kumari",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node init/index.js"
   },
   "dependencies": {
     "body-parser": "^2.3.0",
