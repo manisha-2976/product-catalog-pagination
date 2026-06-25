@@ -7,8 +7,18 @@ const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+const allowedOrigins = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:5174",
+    "https://product-catalog-pagination.vercel.app",
+];
 
-app.use(cors());
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -20,10 +30,6 @@ app.get('/', (req, res) => {
         },
     });
 });
-
-// app.get('/health', (req, res) => {
-//     res.json({ status: 'ok' });
-// });
 
 app.use('/api', productRoutes);
 
